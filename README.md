@@ -92,6 +92,8 @@ cd interactive-lamp
 🌐 Deploy
 Acesse o projeto online através do link abaixo:
 
+https://interactive-lamp.netlify.app
+
 
 📝 Licença
 Este projeto está licenciado sob a MIT License.
