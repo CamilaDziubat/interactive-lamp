@@ -24,6 +24,7 @@ Este projeto foi desenvolvido com o objetivo de aprimorar habilidades em **HTML*
 ---
 
 ## 📁 Estrutura de Pastas
+```bash
 ├── css/
 │   ├── style.css        # Estilos principais do projeto
 │   └── cursor.css       # Estilos personalizados para o cursor
@@ -36,7 +37,7 @@ Este projeto foi desenvolvido com o objetivo de aprimorar habilidades em **HTML*
 ├── index.html           # Arquivo principal da aplicação
 ├── README.md            # Documentação do projeto
 └── LICENSE              # Licença do projeto
-
+````
 
 ---
 
