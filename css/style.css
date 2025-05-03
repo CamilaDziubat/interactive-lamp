@@ -1,0 +1,260 @@
+:root {
+    --color-light-bg: #f0f0f0;
+    --color-light-text: #333;
+    --color-dark-bg: #111;
+    --color-dark-text: #eee;
+
+    --btn-bg-dark: #333;
+    --btn-text-dark: #fff;
+    --btn-bg-light: #ddd;
+    --btn-text-light: #000;
+
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garantir que o body ocupe pelo menos a altura total da tela */
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s ease, color 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+body.day {
+    background-color: var(--color-light-bg);
+    color: var(--color-light-text);
+    background-image: url('/img/fundo.jpg');
+}
+
+body.night {
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text);
+    background-image: url('/img/dia.jpg');
+}
+
+.container {
+    background-color: rgba(224, 224, 224, 0.9);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 450px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+    position: relative;
+    animation: floatUp 1s ease-in-out infinite alternate;
+    flex-grow: 1;
+}
+
+body.night .container {
+    background-color: #222;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+#lampImage {
+    width: 150px;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.0rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: scale(1.1);
+    transform-origin: bottom;
+    background: linear-gradient(45deg, #f8f8f8, #d4af37);
+}
+
+button:active {
+    transform: scale(1);
+    background: linear-gradient(45deg, #c2951f, #f8f8f8);
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+#toggleTheme {
+    width: 150px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    background-color: var(--btn-bg-dark);
+    color: var(--btn-text-dark);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 10;
+}
+
+body.day #toggleTheme {
+    background-color: var(--btn-bg-light);
+    color: var(--btn-text-light);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+    color: var(--color-light-text);
+}
+
+body.day h1 {
+    color: var(--color-dark-text);
+}
+
+body.night h1 {
+    color: var(--color-light-text);
+}
+
+#lampStatus {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #444;
+}
+
+body.night #lampStatus {
+    color: #ccc;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    #lampImage {
+        width: 120px;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #toggleTheme {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
+
+@keyframes particleEffect {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+.cursor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(239, 243, 242, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: pulse 0.3s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Ajuste no Footer */
+.footer {
+    background-color: var(--color-dark-bg);
+    color: var(--color-light-text);
+    padding: 13px;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    position: relative; /* Garantir que o footer fique na parte inferior */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: auto; /* Empurra o footer para o final da tela */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garantir que a wrapper ocupe a altura total */
+    justify-content: space-between; /* Espaça o conteúdo para ocupar toda a altura */
+    width: 100%;
+    max-width: 100%;
+    
+}
+
+footer {
+    margin: 0;
+    width: 100%;
+}
+
+/* Responsividade do footer */
+@media (max-width: 600px) {
+    .footer p {
+        font-size: 0.9rem;
+    }
+}

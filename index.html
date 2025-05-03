@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lâmpada Interativa</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/cursor.css">
+</head>
+<body class="day">
+  
+    <header>
+      <h1>Controle da Lâmpada</h1>
+      <button id="toggleTheme">Dia / Noite</button>
+    </header>
+
+    <main>
+      <div class="container">
+        <!-- Lâmpada -->
+        <div id="lamp" class="lamp">
+          <img id="lampImage" src="img/desligada.jpg" alt="Lâmpada" width="150" height="150">
+          <p id="lampStatus">A lâmpada está desligada.</p>
+        </div>
+
+        <div class="controls">
+          <button id="turnOn">Ligar</button>
+          <button id="turnOff">Desligar</button>
+          <button id="broken">Quebrar</button>
+          <button id="fix">Consertar</button>
+        </div>
+      </div>
+    </main>
+
+  
+
+  <!-- Atualiza o ano atual no rodapé -->
+  <footer class="footer">
+    <p>&copy; <span id="currentYear"></span> Camila Dziubat. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="./Js/lampada.js"></script>
+  <script src="./Js/cursor.js"></script>
+  
+  <!-- Atualiza o ano atual no rodapé -->
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
