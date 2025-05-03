@@ -24,22 +24,18 @@ Este projeto foi desenvolvido com o objetivo de aprimorar habilidades em **HTML*
 ---
 
 ## 📁 Estrutura de Pastas
-📦 interactive-lamp
-├── 📁 css
-│ ├── style.css
-│ └── cursor.css
-├── 📁 img
-│ ├── desligada.jpg
-│ ├── ligada.jpg
-│ ├── quebrada.jpg
-│ ├── fundo.jpg
-│ └── dia.jpg
-├── 📁 Js
-│ ├── lampada.js
-│ └── cursor.js
-├── index.html
-├── README.md
-└── LICENSE
+├── css/
+│   ├── style.css        # Estilos principais do projeto
+│   └── cursor.css       # Estilos personalizados para o cursor
+├── img/
+│   ├── fundo.jpg        # Imagem de fundo para o tema claro
+│   └── dia.jpg          # Imagem de fundo para o tema escuro
+├── Js/
+│   ├── lampada.js       # Lógica para controlar o estado da lâmpada
+│   └── cursor.js        # Lógica para customizar o cursor
+├── index.html           # Arquivo principal da aplicação
+├── README.md            # Documentação do projeto
+└── LICENSE              # Licença do projeto
 
 
 ---
