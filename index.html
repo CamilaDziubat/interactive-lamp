@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lâmpada Interativa</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/cursor.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lâmpada Interativa</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/cursor.css" />
 </head>
+
 <body class="day">
-  
-    <header>
-      <h1>Controle da Lâmpada</h1>
-      <button id="toggleTheme">Dia / Noite</button>
-    </header>
 
+    <div class="menu-container">
+        <button id="toggleMenu">☰</button>
+        <div id="themeMenu" class="dropdown">
+            <button id="themeToggleBtn">🌗 Alternar Tema</button>
+        </div>
+    </div>
+
+
+    <!-- Conteúdo principal -->
     <main>
-      <div class="container">
-        <!-- Lâmpada -->
-        <div id="lamp" class="lamp">
-          <img id="lampImage" src="img/desligada.jpg" alt="Lâmpada" width="150" height="150">
-          <p id="lampStatus">A lâmpada está desligada.</p>
-        </div>
+        <div class="container">
+            <!-- Título abaixo do menu -->
+            <h1>Controle de Lâmpada</h1>
 
-        <div class="controls">
-          <button id="turnOn">Ligar</button>
-          <button id="turnOff">Desligar</button>
-          <button id="broken">Quebrar</button>
-          <button id="fix">Consertar</button>
-        </div>
-      </div>
+            <!-- Lâmpada -->
+            <div id="lamp" class="lamp">
+                <img id="lampImage" src="img/desligada.jpg" alt="Lâmpada" width="150" height="150" />
+                <p id="lampStatus">A lâmpada está desligada.</p>
+
+
+                <!-- Botões de controle -->
+                <div class="controls">
+                    <button id="turnOn">Ligar</button>
+                    <button id="turnOff">Desligar</button>
+                    <button id="broken">Quebrar</button>
+                    <button id="fix">Consertar</button>
+
+                </div>
+            </div>
     </main>
 
-  
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; <span id="currentYear"></span> Camila Dziubat. Todos os direitos reservados.</p>
+    </footer>
 
-  <!-- Atualiza o ano atual no rodapé -->
-  <footer class="footer">
-    <p>&copy; <span id="currentYear"></span> Camila Dziubat. Todos os direitos reservados.</p>
-  </footer>
-
-  <script src="./Js/lampada.js"></script>
-  <script src="./Js/cursor.js"></script>
-  
-  <!-- Atualiza o ano atual no rodapé -->
-  <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-  </script>
+    <!-- Scripts -->
+    <script src="./Js/lampada.js"></script>
+    <script src="./Js/cursor.js"></script>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>
